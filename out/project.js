@@ -7,7 +7,7 @@ const UI_1 = require("./UI");
 const fs = require("fs");
 class Project {
     constructor(context) {
-        this.dirc = new Array("docs", "src", 'jupyter', 'excel', 'img', 'unit_tests', 'data');
+        this.dirc = new Array("docs", "src", 'jupyter', 'excel', 'logs', 'img', 'test', 'data', '.vscode');
         this.context = context;
     }
     async createFiles({ location }) {
