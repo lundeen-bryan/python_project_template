@@ -7,7 +7,7 @@ const UI_1 = require("./UI");
 const fs = require("fs");
 class Project {
     constructor(context) {
-        this.dirc = new Array("docs", "src", 'jupyter', 'excel', 'logs', 'img', 'test', 'data', '.vscode');
+        this.dirc = new Array('docs', 'data', 'src', 'logs', 'test', 'examples', '.vscode');
         this.context = context;
     }
     async createFiles({ location }) {
@@ -33,14 +33,31 @@ class Project {
         }
     }
     async createFolders(location) {
-        this.dirc.forEach((dir) => {
+        const dirSubdirPairs = [
+            { dir: 'docs', subdirs: ['research', 'tutorials'] },
+            { dir: 'data', subdirs: ['excel', 'pdf', 'jupyter', 'sql'] },
+            { dir: 'src' },
+            { dir: 'logs' },
+            { dir: 'test' },
+            { dir: 'examples' },
+            { dir: '.vscode' },
+            // add more directory and subfolder pairs here as needed
+        ];
+
+        for (let pair of dirSubdirPairs) {
+            const { dir, subdirs } = pair;
             try {
                 fs.mkdirSync(path.join(location, dir));
+                if (subdirs) {
+                    for (let subdir of subdirs) {
+                        fs.mkdirSync(path.join(location, dir, subdir));
+                    }
+                }
             }
             catch (err) {
                 console.error(err);
             }
-        });
+        }
     }
     async createProject() {
         const result = await UI_1.UI.openDialogForFolder();
