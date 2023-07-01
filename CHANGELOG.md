@@ -1,9 +1,8 @@
-# Change Log
+# Changelog
 
-All notable changes to the "hell" extension will be documented in this file.
+*Changelog created using the [Simple Changelog](https://marketplace.visualstudio.com/items?itemName=tobiaswaelde.vscode-simple-changelog) extension for VS Code.*
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+## [0.0.1] - 2023-07-01
 
-## [Unreleased]
-
-- Initial release
+### Fixed
+- refactored run.sh
