@@ -10,20 +10,15 @@ To run the program simply Execute the "run.bat" file. Any requirement, already n
 
 # New folder
 
+```acii
 .
-<<<<<<< HEAD
 ├───.vscode            # Project folder you can store notes in
 ├───data               # Keep data here
-=======
-├───.vscode         # Project folder you can store notes in
-├───data            # Keep data here
->>>>>>> 78285276a27ccd340bf2776770d45600240e3fb4
 │   ├───excel
 │   ├───jupyter
 │   ├───pdf
 │   └───sql
 ├───docs
-<<<<<<< HEAD
 │   ├───research       # Keep research notes here (personal preference)
 │   └───tutorials      # Keep tutorials for end users here
 ├───examples           # Keep examples for end users
@@ -31,16 +26,8 @@ To run the program simply Execute the "run.bat" file. Any requirement, already n
 ├───logs               # logs of time spent (personal preference)
 ├───src                # main.py file goes here
 └───test               # tests for programs here
+```
 
-=======
-│   ├───research    # Keep research notes here (personal preference)
-│   └───tutorials   # Keep tutorials for end users here
-├───examples        # Keep examples for end users
-├───imports         # py files that you will call from main.py
-├───logs            # logs of time spent (personal preference)
-├───src             # main.py file goes here
-└───test            # tests for programs here
->>>>>>> 78285276a27ccd340bf2776770d45600240e3fb4
 
 ## Requirements
 
