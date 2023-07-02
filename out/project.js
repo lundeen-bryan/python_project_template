@@ -37,8 +37,8 @@ class Project {
     async createFolders(location) {
         const dirSubdirPairs = [
             { dir: 'docs', subdirs: ['research', 'tutorials'] },
-            { dir: 'data', subdirs: ['excel', 'pdf', 'jupyter', 'sql'] },
-            { dir: 'src' },
+            { dir: 'data', subdirs: ['csv', 'pdf', 'excel', 'img', 'sql'] },
+            { dir: 'src', subdirs: ['jupyter', 'python'] },
             { dir: 'imports' },
             { dir: 'logs' },
             { dir: 'test' },
