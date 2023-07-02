@@ -1,22 +1,21 @@
 # README
 
-Python Project Template generator is a folder-file template generator for simple python projects. ( For WINDOWS ONLY )
+Python Project Template generator is a folder-file template generator for simple python projects. ( For WINDOWS ONLY) originally created by raghavwastaken on github modified by lundeen-bryan.
 
 ## Features
 
 Consists of separations of file in folders and requirements can be specified.
 Add any additional package requirements in the text file.
-To run the program simply Execute the "run.bat" file. Any requirement, already not present will be install.
-
-# New folder
+To run the program simply Execute the "run.sh" file. Any requirement, already not present will be installed.
 
 ```acii
 .
 ├───.vscode            # Project folder you can store notes in
 ├───data               # Keep data here
+│   ├───csv
 │   ├───excel
-│   ├───jupyter
 │   ├───pdf
+│   ├───img
 │   └───sql
 ├───docs
 │   ├───research       # Keep research notes here (personal preference)
@@ -25,9 +24,10 @@ To run the program simply Execute the "run.bat" file. Any requirement, already n
 ├───imports            # py files that you will call from main.py
 ├───logs               # logs of time spent (personal preference)
 ├───src                # main.py file goes here
+│   ├───jupyter
+│   ├───python
 └───test               # tests for programs here
 ```
-
 
 ## Requirements
 
