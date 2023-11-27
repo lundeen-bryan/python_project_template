@@ -21,6 +21,8 @@ This 'Python Project Folders' extension helps in setting up a structured Python 
 **Note:** remember to use "chmod +x" before every bash script. For example:
 ```chmod +x run.sh```
 
+Also, when this is cloned, it must be in a folder named `raghavwastaken1.pythonprojecttemplate-0.0.1`
+
 ## Documentation
 
 ### Setup and Dependency Management (`run.sh`)
