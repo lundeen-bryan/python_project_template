@@ -1,32 +1,47 @@
-<div align='center'>
+# README
 
-# reponame
+Python Project Template generator is a folder-file template generator for simple python projects. ( For WINDOWS ONLY) originally created by raghavwastaken on github modified by lundeen-bryan.
 
-*breif description*
+## Features
 
-</div>
+Consists of separations of file in folders and requirements can be specified.
+Add any additional package requirements in the text file.
+To run the program simply Execute the "run.sh" file. Any requirement, already not present will be installed.
 
-__Table of Contents__
+```acii
+.
+├───.vscode            # Project folder you can store notes in
+├───data               # Keep data here
+│   ├───csv
+│   ├───excel
+│   ├───pdf
+│   ├───img
+│   └───sql
+├───docs
+│   ├───research       # Keep research notes here (personal preference)
+│   └───tutorials      # Keep tutorials for end users here
+├───examples           # Keep examples for end users
+├───imports            # py files that you will call from main.py
+├───logs               # logs of time spent (personal preference)
+├───src                # main.py file goes here
+│   ├───jupyter
+│   ├───python
+└───test               # tests for programs here
+```
 
-<!-- TOC -->
+## Requirements
 
-- [About](#about)
-- [Prerequisites](#prerequisites)
-- [Author Info <a name="author-info"></a>](#author-info-a-nameauthor-infoa)
+    * Python
+    * Pip
 
-<!-- /TOC -->
+## Known Issues
 
-## About
+Report any issues in the github repo.
 
-## Prerequisites
+## Release Notes
 
-## Author Info <a name="author-info"></a>
+### 0.0.1
 
-- Github - [lundeen-bryan](https://github.com/lundeen-bryan)
-- LinkedIn - [BryanLundeen](https://www.linkedin.com/in/bryanlundeen/)
-- Twitter – [@LundeenBryan](https://twitter.com/LundeenBryan)
-- Facebook – [realbryanlundeen](https://www.facebook.com/realbryanlundeen)
+Implementing Basic Functionality
 
-
-[⭡backtotop](#readme)
-
+----------------------------------------------------------------------------------
