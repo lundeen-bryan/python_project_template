@@ -1,5 +1,5 @@
 {
-	"name": "pyprojectfolders",
+	"name": "pythonprojecttemplate",
 	"displayName": "Python Project Folders",
 	"description": "This extension allows you to create a Python project folder structure. Based on 'Python Project Template' by raghavwastaken1 https://marketplace.visualstudio.com/items?itemName=raghavwastaken1.pythonprojecttemplate. Some of the changes include additional folders and bash scripts to create a virtual environment.",
 	"version": "0.1.0",
