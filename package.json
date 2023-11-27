@@ -21,7 +21,7 @@
 		"commands": [
 			{
 				"command": "pythonprojecttemplate.createPythonProject",
-				"title": "Python Project Folders"
+				"title": "Create Python Project"
 			}
 		]
 	},
