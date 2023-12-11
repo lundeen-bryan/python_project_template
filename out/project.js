@@ -22,6 +22,7 @@ class Project {
             const changelogPath = path.join(this.context.extensionPath, 'templates', 'CHANGELOG.md');
             const configPath = path.join(this.context.extensionPath, 'templates', 'config.json');
             const importPath = path.join(this.context.extensionPath, 'templates', '_clear_console.py');
+            const snippetPath = path.join(this.context.extensionPath, 'templates', 'python.code-snippets');
             fs.writeFileSync(path.join(location, 'src', 'main.py'), fs.readFileSync(mainPath, "utf-8"));
             fs.writeFileSync(path.join(location, 'requirements.txt'), fs.readFileSync(reqPath, "utf-8"));
             fs.writeFileSync(path.join(location, "run.sh"), fs.readFileSync(runPath, "utf-8"));
@@ -31,6 +32,7 @@ class Project {
             fs.writeFileSync(path.join(location, ".gitignore"), fs.readFileSync(gitPath, "utf-8"));
             fs.writeFileSync(path.join(location, "CHANGELOG.md"), fs.readFileSync(changelogPath, "utf-8"));
             fs.writeFileSync(path.join(location, 'imports', 'config.json'), fs.readFileSync(configPath, "utf-8"));
+            fs.writeFileSync(path.join(location, '.vscode', 'python.code-snippets'), fs.readFileSync(snippetPath, "utf-8"));
             fs.writeFileSync(path.join(location, 'imports', '_clear_console.py'), fs.readFileSync(importPath, "utf-8"));
             vscode.workspace.openTextDocument(path.join(location, 'src', 'main.py')).then(doc => vscode.window.showTextDocument(doc, { preview: false }));
         }
@@ -42,7 +44,6 @@ class Project {
         const dirSubdirPairs = [
             { dir: 'docs', subdirs: ['research', 'tutorials'] },
             { dir: 'data', subdirs: ['csv', 'pdf', 'excel', 'img', 'sql'] },
-            { dir: 'src', subdirs: ['jupyter', 'python'] },
             { dir: 'imports' },
             { dir: 'logs' },
             { dir: 'test' },
