@@ -44,6 +44,7 @@ class Project {
         const dirSubdirPairs = [
             { dir: 'docs', subdirs: ['research', 'tutorials'] },
             { dir: 'data', subdirs: ['csv', 'pdf', 'excel', 'img', 'sql'] },
+            { dir: 'src', subdirs: ['jupyter', 'python'] },
             { dir: 'imports' },
             { dir: 'logs' },
             { dir: 'test' },
