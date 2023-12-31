@@ -7,7 +7,7 @@ const UI_1 = require("./UI");
 const fs = require("fs");
 class Project {
     constructor(context) {
-        this.dirc = new Array('docs', 'data', 'src', 'imports', 'logs', 'test', 'examples', '.vscode');
+        this.dirc = new Array('docs', 'data', 'src', 'imports', 'logs', 'test', 'scripts', '.vscode');
         this.context = context;
     }
     async createFiles({ location }) {
@@ -15,6 +15,7 @@ class Project {
             const mainPath = path.join(this.context.extensionPath, 'templates', 'main.py');
             const reqPath = path.join(this.context.extensionPath, 'templates', 'requirements.txt');
             const runPath = path.join(this.context.extensionPath, 'templates', 'run.sh');
+            const myalias = path.join(this.context.extensionPath, 'templates', 'alias_mypython.sh');
             const removePath = path.join(this.context.extensionPath, 'templates', 'remove_venv.sh');
             const pipInstall = path.join(this.context.extensionPath, 'templates', 'update_package.sh');
             const readPath = path.join(this.context.extensionPath, 'templates', 'README.md');
@@ -26,6 +27,7 @@ class Project {
             fs.writeFileSync(path.join(location, 'src', 'main.py'), fs.readFileSync(mainPath, "utf-8"));
             fs.writeFileSync(path.join(location, 'requirements.txt'), fs.readFileSync(reqPath, "utf-8"));
             fs.writeFileSync(path.join(location, "run.sh"), fs.readFileSync(runPath, "utf-8"));
+            fs.writeFileSync(path.join(location, 'alias_mypython.sh'), fs.readFileSync(myalias, "utf-8"));
             fs.writeFileSync(path.join(location, "remove_venv.sh"), fs.readFileSync(removePath, "utf-8"));
             fs.writeFileSync(path.join(location, "update_package.sh"), fs.readFileSync(pipInstall, "utf-8"));
             fs.writeFileSync(path.join(location, "README.md"), fs.readFileSync(readPath, "utf-8"));
@@ -48,7 +50,7 @@ class Project {
             { dir: 'imports' },
             { dir: 'logs' },
             { dir: 'test' },
-            { dir: 'examples' },
+            { dir: 'scripts' },
             { dir: '.vscode' },
             // add more directory and subfolder pairs here as needed
         ];
