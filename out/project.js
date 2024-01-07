@@ -14,10 +14,7 @@ class Project {
         try {
             const mainPath = path.join(this.context.extensionPath, 'templates', 'main.py');
             const reqPath = path.join(this.context.extensionPath, 'templates', 'requirements.txt');
-            const runPath = path.join(this.context.extensionPath, 'templates', 'run.sh');
-            const myalias = path.join(this.context.extensionPath, 'templates', 'alias_mypython.sh');
-            const removePath = path.join(this.context.extensionPath, 'templates', 'remove_venv.sh');
-            const pipInstall = path.join(this.context.extensionPath, 'templates', 'update_package.sh');
+            const runPath = path.join(this.context.extensionPath, 'templates', 'create_venv.sh');
             const readPath = path.join(this.context.extensionPath, 'templates', 'README.md');
             const gitPath = path.join(this.context.extensionPath, 'templates', '.gitignore');
             const changelogPath = path.join(this.context.extensionPath, 'templates', 'CHANGELOG.md');
@@ -26,10 +23,7 @@ class Project {
             const snippetPath = path.join(this.context.extensionPath, 'templates', 'python.code-snippets');
             fs.writeFileSync(path.join(location, 'src', 'main.py'), fs.readFileSync(mainPath, "utf-8"));
             fs.writeFileSync(path.join(location, 'requirements.txt'), fs.readFileSync(reqPath, "utf-8"));
-            fs.writeFileSync(path.join(location, "run.sh"), fs.readFileSync(runPath, "utf-8"));
-            fs.writeFileSync(path.join(location, 'alias_mypython.sh'), fs.readFileSync(myalias, "utf-8"));
-            fs.writeFileSync(path.join(location, "remove_venv.sh"), fs.readFileSync(removePath, "utf-8"));
-            fs.writeFileSync(path.join(location, "update_package.sh"), fs.readFileSync(pipInstall, "utf-8"));
+            fs.writeFileSync(path.join(location, "create_venv.sh"), fs.readFileSync(runPath, "utf-8"));
             fs.writeFileSync(path.join(location, "README.md"), fs.readFileSync(readPath, "utf-8"));
             fs.writeFileSync(path.join(location, ".gitignore"), fs.readFileSync(gitPath, "utf-8"));
             fs.writeFileSync(path.join(location, "CHANGELOG.md"), fs.readFileSync(changelogPath, "utf-8"));
