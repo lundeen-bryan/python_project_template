@@ -7,7 +7,7 @@ const UI_1 = require("./UI");
 const fs = require("fs");
 class Project {
     constructor(context) {
-        this.dirc = new Array('docs', 'data', 'src', 'imports', 'logs', 'test', 'scripts', '.vscode');
+        this.dirc = new Array('src', 'imports', 'test', '.vscode');
         this.context = context;
     }
     async createFiles({ location }) {
@@ -20,6 +20,8 @@ class Project {
             const changelogPath = path.join(this.context.extensionPath, 'templates', 'CHANGELOG.md');
             const configPath = path.join(this.context.extensionPath, 'templates', 'config.json');
             const importPath = path.join(this.context.extensionPath, 'templates', '_clear_console.py');
+            const initPath = path.join(this.context.extensionPath, 'templates', '__init__.py');
+            const setupPath = path.join(this.context.extensionPath, 'templates', 'setup.py');
             const snippetPath = path.join(this.context.extensionPath, 'templates', 'python.code-snippets');
             fs.writeFileSync(path.join(location, 'src', 'main.py'), fs.readFileSync(mainPath, "utf-8"));
             fs.writeFileSync(path.join(location, 'requirements.txt'), fs.readFileSync(reqPath, "utf-8"));
@@ -30,6 +32,8 @@ class Project {
             fs.writeFileSync(path.join(location, 'imports', 'config.json'), fs.readFileSync(configPath, "utf-8"));
             fs.writeFileSync(path.join(location, '.vscode', 'python.code-snippets'), fs.readFileSync(snippetPath, "utf-8"));
             fs.writeFileSync(path.join(location, 'imports', '_clear_console.py'), fs.readFileSync(importPath, "utf-8"));
+            fs.writeFileSync(path.join(location, 'imports', '__init__.py'), fs.readFileSync(initPath, "utf-8"));
+            fs.writeFileSync(path.join(location, 'setup.py'), fs.readFileSync(setupPath, "utf-8"));
             vscode.workspace.openTextDocument(path.join(location, 'src', 'main.py')).then(doc => vscode.window.showTextDocument(doc, { preview: false }));
         }
         catch (err) {
@@ -38,13 +42,9 @@ class Project {
     }
     async createFolders(location) {
         const dirSubdirPairs = [
-            { dir: 'docs', subdirs: ['research', 'tutorials'] },
-            { dir: 'data', subdirs: ['csv', 'pdf', 'excel', 'img', 'sql'] },
             { dir: 'src', subdirs: ['jupyter', 'python'] },
             { dir: 'imports' },
-            { dir: 'logs' },
             { dir: 'test' },
-            { dir: 'scripts' },
             { dir: '.vscode' },
             // add more directory and subfolder pairs here as needed
         ];
