@@ -12,7 +12,6 @@ class Project {
     }
     async createFiles({ location }) {
         try {
-            const mainPath = path.join(this.context.extensionPath, 'templates', 'main.py');
             const reqPath = path.join(this.context.extensionPath, 'templates', 'requirements.txt');
             const runPath = path.join(this.context.extensionPath, 'templates', 'create_venv.sh');
             const readPath = path.join(this.context.extensionPath, 'templates', 'README.md');
@@ -23,18 +22,19 @@ class Project {
             const initPath = path.join(this.context.extensionPath, 'templates', '__init__.py');
             const setupPath = path.join(this.context.extensionPath, 'templates', 'setup.py');
             const snippetPath = path.join(this.context.extensionPath, 'templates', 'python.code-snippets');
-            fs.writeFileSync(path.join(location, 'src', 'main.py'), fs.readFileSync(mainPath, "utf-8"));
+            const scriptPath = path.join(this.context.extensionPath, 'templates', 'list_scripts.py');
             fs.writeFileSync(path.join(location, 'requirements.txt'), fs.readFileSync(reqPath, "utf-8"));
             fs.writeFileSync(path.join(location, "create_venv.sh"), fs.readFileSync(runPath, "utf-8"));
             fs.writeFileSync(path.join(location, "README.md"), fs.readFileSync(readPath, "utf-8"));
             fs.writeFileSync(path.join(location, ".gitignore"), fs.readFileSync(gitPath, "utf-8"));
             fs.writeFileSync(path.join(location, "CHANGELOG.md"), fs.readFileSync(changelogPath, "utf-8"));
             fs.writeFileSync(path.join(location, 'imports', 'config.json'), fs.readFileSync(configPath, "utf-8"));
+            fs.writeFileSync(path.join(location, 'imports', 'list_scripts.py'), fs.readFileSync(scriptPath, "utf-8"));
             fs.writeFileSync(path.join(location, '.vscode', 'python.code-snippets'), fs.readFileSync(snippetPath, "utf-8"));
             fs.writeFileSync(path.join(location, 'imports', '_clear_console.py'), fs.readFileSync(importPath, "utf-8"));
             fs.writeFileSync(path.join(location, 'imports', '__init__.py'), fs.readFileSync(initPath, "utf-8"));
             fs.writeFileSync(path.join(location, 'setup.py'), fs.readFileSync(setupPath, "utf-8"));
-            vscode.workspace.openTextDocument(path.join(location, 'src', 'main.py')).then(doc => vscode.window.showTextDocument(doc, { preview: false }));
+            vscode.workspace.openTextDocument(path.join(location, 'setup.py')).then(doc => vscode.window.showTextDocument(doc, { preview: false }));
         }
         catch (err) {
             console.error(err);
