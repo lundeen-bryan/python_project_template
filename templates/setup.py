@@ -10,8 +10,7 @@ setup(
     url='Enter your URL here',
     license='MIT',
     keywords='cli, tools, command-line, click',
-    packages=find_packages(),
-    package_dir={'': 'imports'},
+    package_dir={'': 'imports'}, #alt: packages=find_packages('imports'),
     include_package_data=True,
     install_requires=[
         'click',
