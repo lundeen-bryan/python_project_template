@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='cli_tools',
+    name='cli_tools', # rename this to match your project name
     version='1.0.0',
     author='lundeen-bryan',
     description='Command-line tools for various tasks.',
@@ -10,10 +10,11 @@ setup(
     url='Enter your URL here',
     license='MIT',
     keywords='cli, tools, command-line, click',
-    package_dir={'': 'imports'}, #alt: packages=find_packages('imports'),
+    packages=find_packages(where='imports'),
+    package_dir={'': 'imports'},
     include_package_data=True,
     install_requires=[
-        'click',
+        'rich_click',
     ],
     entry_points={
         'console_scripts': [
