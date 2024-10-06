@@ -20,7 +20,7 @@ class Project {
             const configPath = path.join(this.context.extensionPath, 'templates', 'config.json');
             const importPath = path.join(this.context.extensionPath, 'templates', '_clear_console.py');
             const initPath = path.join(this.context.extensionPath, 'templates', '__init__.py');
-            const setupPath = path.join(this.context.extensionPath, 'templates', 'setup.py');
+            const setupPath = path.join(this.context.extensionPath, 'templates', 'pyproject.toml');
             const snippetPath = path.join(this.context.extensionPath, 'templates', 'python.code-snippets');
             const scriptPath = path.join(this.context.extensionPath, 'templates', 'list_scripts.py');
             fs.writeFileSync(path.join(location, 'requirements.txt'), fs.readFileSync(reqPath, "utf-8"));
@@ -33,8 +33,8 @@ class Project {
             fs.writeFileSync(path.join(location, '.vscode', 'python.code-snippets'), fs.readFileSync(snippetPath, "utf-8"));
             fs.writeFileSync(path.join(location, 'imports', '_clear_console.py'), fs.readFileSync(importPath, "utf-8"));
             fs.writeFileSync(path.join(location, 'imports', '__init__.py'), fs.readFileSync(initPath, "utf-8"));
-            fs.writeFileSync(path.join(location, 'setup.py'), fs.readFileSync(setupPath, "utf-8"));
-            vscode.workspace.openTextDocument(path.join(location, 'setup.py')).then(doc => vscode.window.showTextDocument(doc, { preview: false }));
+            fs.writeFileSync(path.join(location, 'pyproject.toml'), fs.readFileSync(setupPath, "utf-8"));
+            vscode.workspace.openTextDocument(path.join(location, 'pyproject.toml')).then(doc => vscode.window.showTextDocument(doc, { preview: false }));
         }
         catch (err) {
             console.error(err);
