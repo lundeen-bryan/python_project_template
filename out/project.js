@@ -14,6 +14,7 @@ class Project {
         try {
             const reqPath = path.join(this.context.extensionPath, 'templates', 'requirements.txt');
             const runPath = path.join(this.context.extensionPath, 'templates', 'create_venv.sh');
+            const delPath = path.join(this.context.extensionPath, 'templates', 'remove_venv_recursively.sh');
             const readPath = path.join(this.context.extensionPath, 'templates', 'README.md');
             const gitPath = path.join(this.context.extensionPath, 'templates', '.gitignore');
             const changelogPath = path.join(this.context.extensionPath, 'templates', 'CHANGELOG.md');
@@ -25,6 +26,7 @@ class Project {
             const scriptPath = path.join(this.context.extensionPath, 'templates', 'list_scripts.py');
             fs.writeFileSync(path.join(location, 'requirements.txt'), fs.readFileSync(reqPath, "utf-8"));
             fs.writeFileSync(path.join(location, "create_venv.sh"), fs.readFileSync(runPath, "utf-8"));
+            fs.writeFileSync(path.join(location, "remove_venv_recursively.sh"), fs.readFileSync(delPath, "utf-8"));
             fs.writeFileSync(path.join(location, "README.md"), fs.readFileSync(readPath, "utf-8"));
             fs.writeFileSync(path.join(location, ".gitignore"), fs.readFileSync(gitPath, "utf-8"));
             fs.writeFileSync(path.join(location, "CHANGELOG.md"), fs.readFileSync(changelogPath, "utf-8"));

@@ -40,7 +40,7 @@ def list_console_scripts():
         return
 
     # Filter entry points to only include those that belong to the current package
-    package_entry_points = [ep for ep in entry_points if ep.dist.name == package_name]
+    package_entry_points = {ep for ep in entry_points if ep.dist.name == package_name}
 
     if not package_entry_points:
         click.echo(f"No console_scripts found for package: {package_name}")
