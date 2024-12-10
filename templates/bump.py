@@ -21,7 +21,7 @@ click.rich_click.MAX_WIDTH = 72
 )
 @click.option(
     "--file",
-    default="C:/Users/blundeen/AppData/Local/Apps/repos/today_reports/pyproject.toml",
+    default="./pyproject.toml",
     show_default=True,
 )
 @click.argument(
